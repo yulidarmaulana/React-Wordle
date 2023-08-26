@@ -6,11 +6,12 @@ function App() {
   const [solution, setSolution] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:3001/solution')
+    fetch('https://yulidarmaulana.github.io/React-Wordle/data/db.json')
     .then(res => res.json())
     .then(json => {
       // random int between 0 and 14
-      const randomSolution = json[Math.floor(Math.random() * json.length)]
+      const randomSolution = json.solution[Math.floor(Math.random() * json.solution.length)]
+      // console.log(json)
       setSolution(randomSolution.word)
     })
   }, [setSolution])

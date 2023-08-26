@@ -4,10 +4,10 @@ export default function Keypad({usedKeys}) {
   const [letters, setLetters] = useState(null)
 
   useEffect(() => {
-    fetch('http://localhost:3001/letters')
+    fetch('https://yulidarmaulana.github.io/React-Wordle/data/db.json')
       .then(res => res.json())
       .then(json => {
-        setLetters(json)
+        setLetters(json.letters)
       })
   }, [])
 

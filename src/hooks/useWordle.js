@@ -8,6 +8,8 @@ const useWordle = (solution) => {
   const [isCorrect, setIsCorrect] = useState(false)
   const [usedKeys, setUsedKeys] = useState({})
 
+  // console.log(solution)
+
   const formatGuess = () => {
     let solutionArray = [...solution]
     let formattedGuess = [...currentGuess].map((l) => {
